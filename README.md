@@ -1,15 +1,5 @@
 # 📊 Macro Intelligence Dashboard
-
-> A professional real-time macroeconomic dashboard built with Python & Streamlit, powered by the FRED API (St. Louis Fed).
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red?style=flat-square)
-![FRED API](https://img.shields.io/badge/Data-FRED%20API-green?style=flat-square)
-
 ---
-
-## 🖥️ Features
-
 ### 🏠 Overview
 - Real-time key metric cards with signal badges (Inverted / Elevated / Normal)
 - 2×2 overview chart: Yield spread, CPI vs PCE, Real Yields, Sahm Rule
@@ -84,7 +74,6 @@ macro-dashboard/
 1. Push to GitHub
 2. Go to [share.streamlit.io](https://share.streamlit.io)
 3. Connect your repo and set `app.py` as the entry point
-4. Done — shareable link for your CV
 
 > **Tip:** Add `FRED_API_KEY` as a [Streamlit Secret](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management) to avoid entering it manually each session.
 
@@ -113,12 +102,3 @@ All data sourced from the **Federal Reserve Bank of St. Louis (FRED)** via their
 ## ⚠️ Disclaimer
 
 This dashboard is for **educational and research purposes only**. The Composite Recession Risk Score is a custom model and does not constitute financial advice or a trading signal.
-
----
-
-## 🛠️ Built With
-
-- [Streamlit](https://streamlit.io) — UI framework
-- [Plotly](https://plotly.com/python/) — Interactive charts
-- [FRED API](https://fred.stlouisfed.org/docs/api/fred/) — Economic data
-- [Pandas](https://pandas.pydata.org/) — Data manipulation
