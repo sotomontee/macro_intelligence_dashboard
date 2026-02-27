@@ -196,20 +196,24 @@ with st.sidebar:
 
     st.markdown("<hr style='border-color: #1f2d40; margin: 20px 0;'>", unsafe_allow_html=True)
 
-    fred_key = st.text_input(
-        "FRED API Key",
-        type="password",
-        placeholder="Paste your key here",
-        help="Get a free key at fred.stlouisfed.org/docs/api/api_key.html"
-    )
-
-    if not fred_key:
-        st.markdown("""
-        <div class='info-box'>
-            🔑 Enter your free FRED API key to load live data.<br><br>
-            Get one at <b>fred.stlouisfed.org</b> — takes 30 seconds.
-        </div>
-        """, unsafe_allow_html=True)
+    # Try Streamlit Cloud secrets first, fall back to manual input
+    try:
+        fred_key = st.secrets["FRED_API_KEY"]
+        st.markdown("<div class='info-box'>✅ API key loaded automatically.</div>", unsafe_allow_html=True)
+    except:
+        fred_key = st.text_input(
+            "FRED API Key",
+            type="password",
+            placeholder="Paste your key here",
+            help="Get a free key at fred.stlouisfed.org/docs/api/api_key.html"
+        )
+        if not fred_key:
+            st.markdown("""
+            <div class='info-box'>
+                🔑 Enter your free FRED API key to load live data.<br><br>
+                Get one at <b>fred.stlouisfed.org</b> — takes 30 seconds.
+            </div>
+            """, unsafe_allow_html=True)
 
     st.markdown("""
     <div style='position: absolute; bottom: 20px; font-family: DM Mono, monospace; font-size: 10px; color: #2d3f55; letter-spacing: 0.1em;'>
